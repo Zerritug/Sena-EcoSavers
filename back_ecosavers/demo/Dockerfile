@@ -1,8 +1,5 @@
-# Usamos OpenJDK como base
-FROM openjdk:21
-
-# Instalamos Maven dentro del contenedor
-RUN apt-get update && apt-get install -y maven
+# Usamos una imagen oficial de Maven con OpenJDK
+FROM maven:3.9.6-eclipse-temurin-21
 
 # Definimos el directorio de trabajo
 WORKDIR /app
@@ -10,7 +7,7 @@ WORKDIR /app
 # Copiamos el código fuente al contenedor
 COPY . .
 
-# Construimos el proyecto
+# Construimos el proyecto dentro del contenedor
 RUN mvn clean package
 
 # Copiamos el .jar generado
