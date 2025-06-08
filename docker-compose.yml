@@ -6,7 +6,7 @@ services:
       - "8080:8080"
 
   frontend:
-    build: ./front_ecosavers/ecosavers
+    build: ./front_ecosavers/eccosavers
     ports:
       - "4200:4200"
 
