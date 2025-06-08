@@ -5,7 +5,8 @@ FROM openjdk:21
 WORKDIR /app
 
 RUN mvn clean package
-COPY target/demo.jar app.jar
+COPY target/demo-0.0.1-SNAPSHOT.jar app.jar
+
 
 
 EXPOSE 8080
