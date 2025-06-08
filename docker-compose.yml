@@ -1,0 +1,12 @@
+version: '3'
+services:
+  backend:
+    build: ./back_ecosavers/demo
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build: ./front_ecosavers/ecosavers
+    ports:
+      - "4200:4200"
+
