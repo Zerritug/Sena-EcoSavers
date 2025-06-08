@@ -4,6 +4,7 @@ FROM openjdk:21
 
 WORKDIR /app
 
+RUN mvn clean package
 COPY target/demo.jar app.jar
 
 
