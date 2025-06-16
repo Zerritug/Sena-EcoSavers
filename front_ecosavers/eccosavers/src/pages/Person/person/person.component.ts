@@ -2,19 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { PersonService } from '../services/person.service'; // Asegúrate de que la ruta a PersonService sea correcta
 import { PersonModel } from '../interfaces/PersonsModel';
 import { CommonModule } from '@angular/common'; // Importa CommonModule (contiene NgFor)
-import { HttpClientModule } from '@angular/common/http'; // Asegúrate de esta importación
+import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from '../../../shared/header/header.component'; // Asegúrate de esta importación
 
 @Component({
   selector: 'app-person',
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, HeaderComponent],
   templateUrl: './person.component.html',
-  styleUrl: './person.component.scss'
+  styleUrl: './person.component.scss',
 })
 export class PersonComponent implements OnInit {
   persons: PersonModel[] = [];
   selectedPerson: PersonModel | null = null;
 
-  constructor(private personService: PersonService) { }
+  constructor(private personService: PersonService) {}
 
   ngOnInit(): void {
     this.loadPersons();
@@ -34,10 +35,18 @@ export class PersonComponent implements OnInit {
   selectPerson(person: PersonModel): void {
     this.selectedPerson = person;
   }
+  deletePerson(person: PersonModel): void {
+    this.personService.deletePerson(person.id).subscribe(
+      () => {
+        this.loadPersons();
+      },
+      (error: any) => {
+        console.error('Error deleting person:', error);
+      }
+    );
+  }
 
   clearSelection(): void {
     this.selectedPerson = null;
   }
-  
 }
-

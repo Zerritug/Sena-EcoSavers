@@ -1,14 +1,14 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { PublicationsComponent } from '../pages/Publications/publications/publications.component';
 import { PersonComponent } from '../pages/Person/person/person.component';
-import { MenuSuperiorComponent } from '../pages/MenuSuperior/menu-superior/menu-superior.component';
-import { FooterComponent } from '../pages/Footer/footer/footer.component';
+import { HomePageComponent } from '../pages/home-page/home-page.component';
+import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
   { path: 'publications', component: PublicationsComponent },
   { path: 'person', component: PersonComponent },
-  { path: 'menu-superior', component: MenuSuperiorComponent },
-  { path: 'footer', component: FooterComponent },
-  { path: '', redirectTo: '/publications', pathMatch: 'full' }, // Ruta por defecto
-  { path: '**', redirectTo: '/publications' } // Ruta para manejar errores 404
+  { path: 'home', component: HomePageComponent },
+
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home' },
 ];
