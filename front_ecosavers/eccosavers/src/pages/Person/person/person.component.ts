@@ -3,11 +3,12 @@ import { PersonService } from '../services/person.service'; // Asegúrate de que
 import { PersonModel } from '../interfaces/PersonsModel';
 import { CommonModule } from '@angular/common'; // Importa CommonModule (contiene NgFor)
 import { HttpClientModule } from '@angular/common/http';
-import { HeaderComponent } from '../../../shared/header/header.component'; // Asegúrate de esta importación
+import { HeaderComponent } from '../../../shared/header/header.component';
+import { FooterComponent } from '../../../shared/footer/footer.component'; // Asegúrate de esta importación
 
 @Component({
   selector: 'app-person',
-  imports: [CommonModule, HttpClientModule, HeaderComponent],
+  imports: [CommonModule, HttpClientModule, HeaderComponent, FooterComponent],
   templateUrl: './person.component.html',
   styleUrl: './person.component.scss',
 })

@@ -49,6 +49,10 @@ body {
   color: var(--color-white);
   height: 50px;
 }
+.text .Location:hover {
+  background-color: var(--color-lightgreen);
+  color: var(--color-dark);
+}
 
 .text .Recycle {
   display: inline-flex;
@@ -62,6 +66,11 @@ body {
   text-decoration: none;
   color: var(--color-white);
   height: 50px;
+}
+.text .Recycle:hover {
+  background-color: var(--color-lightgreen);
+  color: var(--color-dark);
+  border: 1px solid var(--color-dark);
 }
 
 .text .Recycle a,
@@ -109,4 +118,31 @@ body {
 .education,
 .companies {
   @extend .locations;
+}
+
+.AboutUs {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-primary);
+  padding: 7px 20px;
+  border-radius: 5px;
+  border: var(--color-secondary) solid 1px;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-white);
+  height: 50px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.AboutUs a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+.AboutUs:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
+  border: 1px solid var(--color-dark);
+  a {
+    color: var(--color-dark);
+  }
 }
