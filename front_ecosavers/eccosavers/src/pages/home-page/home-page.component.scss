@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--color-primary);
+}
+
+.principal {
+  background-color: var(--color-primary);
+  margin: 10px;
+  margin-top: 40px;
+  border-radius: 20px;
+  height: 400px;
+  flex-direction: row;
+  display: flex;
+  text-align: justify;
+  padding: 30px;
+}
+.principal img {
+  border-radius: 40px;
+}
+
+.text {
+  color: var(--color-white);
+  margin: 60px;
+  margin-left: 100px;
+  width: 60%;
+}
+.text h1 {
+  font-size: 40px;
+  line-height: 1.2;
+  color: var(--color-secondary);
+}
+.text p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgb(214, 214, 214);
+}
+
+.text .Location {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-accent);
+  padding: 7px 20px;
+  border-radius: 5px;
+  border: var(--color-accent) solid 1px;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-white);
+  height: 50px;
+}
+
+.text .Recycle {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-primary);
+  margin-left: 50px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: var(--color-white) solid 1px;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-white);
+  height: 50px;
+}
+
+.text .Recycle a,
+.text .Location a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+//
+.secondary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    color: var(--color-primary);
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+}
+.boxes {
+  display: flex;
+  flex-direction: row;
+}
+.locations {
+  background-color: var(--color-lightgreen);
+  width: 35%;
+  height: 250px;
+  border-radius: 20px;
+  h3,
+  p {
+    color: var(--color-primary);
+    margin: 10px;
+  }
+  margin: 20px;
+  h3 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+  p {
+    text-align: justify;
+  }
+}
+.education,
+.companies {
+  @extend .locations;
+}

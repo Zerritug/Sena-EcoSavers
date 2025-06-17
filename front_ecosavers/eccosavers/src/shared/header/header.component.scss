@@ -1,0 +1,44 @@
+@use "../../styles.scss" as global;
+
+.navegation {
+  background-color: var(--color-primary);
+  margin-left: 0px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0px 0px 10px 10px;
+}
+h1 {
+  text-align: center;
+  color: var(--color-white);
+}
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 0px;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary);
+  border: var(--color-white) 2px solid;
+  border-radius: 20px;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-dark-primary);
+}
+
+button a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: bold;
+}
