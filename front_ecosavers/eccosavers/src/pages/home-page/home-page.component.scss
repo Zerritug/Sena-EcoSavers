@@ -79,7 +79,7 @@ body {
   color: var(--color-white);
 }
 
-//
+//Secondary part of homepage //
 .secondary {
   display: flex;
   flex-direction: column;
@@ -102,7 +102,7 @@ body {
   border-radius: 20px;
   h3,
   p {
-    color: var(--color-primary);
+    color: var(--color-black);
     margin: 10px;
   }
   margin: 20px;
@@ -112,12 +112,17 @@ body {
     margin-bottom: 40px;
   }
   p {
-    text-align: justify;
+    text-align: center;
   }
 }
 .education,
 .companies {
   @extend .locations;
+}
+
+.boxes :hover {
+  background-color: var(--color-dark-primary);
+  color: var(--color-white);
 }
 
 .AboutUs {
@@ -145,4 +150,33 @@ body {
   a {
     color: var(--color-dark);
   }
+}
+
+//animations
+
+@keyframes moveUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
+.Location,
+.Recycle,
+.AboutUs,
+.education,
+.companies,
+.locations {
+  transition: transform 0.3s ease-in-out;
+}
+
+.Location:hover,
+.Recycle:hover,
+.AboutUs:hover,
+.education:hover,
+.companies:hover,
+.locations:hover {
+  transform: translateY(10px); // Mueve el botón hacia arriba
 }

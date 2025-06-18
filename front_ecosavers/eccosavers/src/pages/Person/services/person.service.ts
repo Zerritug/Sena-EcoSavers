@@ -11,7 +11,7 @@ export class PersonService {
     return this.http.delete<any>(`${this.apiUrl}/delete?personId=${personId}`);
   }
 
-  private apiUrl = 'http://localhost:8080/api/persons/getAll'; // La URL correcta de tu backend
+  private apiUrl = 'http://localhost:8080/api/persons/getAll';
   constructor(private http: HttpClient) {}
 
   getAllPersons(): Observable<PersonModel[]> {
