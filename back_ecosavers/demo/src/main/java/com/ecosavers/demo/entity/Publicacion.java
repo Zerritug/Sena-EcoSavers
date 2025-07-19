@@ -1,6 +1,7 @@
 package com.ecosavers.demo.entity;
 import jakarta.persistence.*;
 import com.ecosavers.demo.entity.Usuario;
+import com.ecosavers.demo.entity.Categoria;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
@@ -16,9 +17,18 @@ public class Publicacion {
     private String contenido;
     private LocalDateTime fecha;
 
+    //dependencia de categoria
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name= "Categoria",nullable = false)
+    private Categoria categoria;
+    //dependencia de usuario
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "Id_Usuario", nullable = false)
     private Usuario usuario;
+
+
+
 
     public  Publicacion(){}
 
@@ -37,4 +47,6 @@ public class Publicacion {
     public Usuario usuario(){return usuario;}
     public void setUsuario(Usuario usuarios){this.usuario = usuarios;}
 
+    public Categoria categoria(){return categoria;}
+    public void setCategoria(Categoria categorias){this.categoria = categoria;}
 }

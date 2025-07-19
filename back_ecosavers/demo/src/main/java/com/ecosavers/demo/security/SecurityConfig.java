@@ -20,6 +20,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/api/rol/**").permitAll()
+                        .requestMatchers("/api/categorias/**").hasRole("ADMIN")
+                        .requestMatchers("/api/Publicaciones").permitAll()
                         .requestMatchers("/api/Usuarios/**").permitAll()
                         .anyRequest().authenticated()
                 )

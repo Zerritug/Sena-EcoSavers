@@ -3,6 +3,7 @@ import com.ecosavers.demo.entity.Categoria;
 import com.ecosavers.demo.service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class CategoriaController {
         this.categoriaService = categoriaService;
     }
 
+    @PreAuthorize("hasRole('ADMIN') or hasRole ('USUARIO')")
     @GetMapping("/getAll")
     public List<Categoria>getAllCategorias(){return categoriaService.getAllCategorias();}
 
