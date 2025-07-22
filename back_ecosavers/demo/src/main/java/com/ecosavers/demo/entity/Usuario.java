@@ -12,7 +12,7 @@
         private Long id;
         private String Name;
         private String email;
-        private int TelNumber;
+        private Long TelNumber;
         private boolean Estado;
         private String Contraseña;
 
@@ -32,8 +32,8 @@
         public String getEmail(){return email;};
         public void setEmail(String Email){this.email = Email;};
 
-        public int getTelNumber(){return TelNumber;}
-        public void setTelNumber(int TelNumber){this.TelNumber = TelNumber;}
+        public Long getTelNumber(){return TelNumber;}
+        public void setTelNumber(Long TelNumber){this.TelNumber = TelNumber;}
 
         public Boolean getEstado(){return Estado;};
         public void setEstado(boolean Estado){ this.Estado = Estado;};

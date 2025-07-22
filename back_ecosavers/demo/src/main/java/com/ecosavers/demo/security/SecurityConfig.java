@@ -21,8 +21,9 @@ public class SecurityConfig {
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/api/rol/**").permitAll()
                         .requestMatchers("/api/categorias/**").hasRole("ADMIN")
-                        .requestMatchers("/api/Publicaciones").permitAll()
+                        .requestMatchers("/api/Publicaciones/**").hasRole("ADMIN")
                         .requestMatchers("/api/Usuarios/**").permitAll()
+                        .requestMatchers("/h2-console/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);

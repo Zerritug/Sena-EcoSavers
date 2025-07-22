@@ -20,15 +20,15 @@ public class CategoriaController {
     @GetMapping("/getAll")
     public List<Categoria>getAllCategorias(){return categoriaService.getAllCategorias();}
 
-
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")
     public ResponseEntity<Categoria> createCategoria(@RequestBody Categoria categoria) {
         return ResponseEntity.ok(categoriaService.createCategoria(categoria));
     }
-
-    @DeleteMapping("/delete")
-    public ResponseEntity<String>deleteCategoria(@RequestParam Long id){
+    @PreAuthorize("hasRole('ADMIN')")
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteCategoria(@PathVariable Long id) {
         categoriaService.deleteCategoria(id);
-        return ResponseEntity.ok( "Categoria eliminada correctamente");
+        return ResponseEntity.ok("Categoría eliminada correctamente");
     }
 }

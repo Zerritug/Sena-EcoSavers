@@ -35,9 +35,9 @@ public class PublcacionController {
 
     }
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/delete")
-    public ResponseEntity<String> deletePublicacion(@RequestParam Long id){
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deletePublicacion(@PathVariable Long id) {
         publiService.deletePublicacion(id);
-        return ResponseEntity.ok("Usuario eliminado correctamente");
+        return ResponseEntity.ok("Publicación eliminada correctamente");
     }
 }

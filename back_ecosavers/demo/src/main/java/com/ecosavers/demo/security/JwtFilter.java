@@ -44,7 +44,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
 
                     List<? extends GrantedAuthority> authorities = roles.stream()
-                            .map(SimpleGrantedAuthority::new)
+                            .map(SimpleGrantedAuthority::new) // correcto si el token ya contiene "ROLE_ADMIN"
                             .toList();
 
 
@@ -53,10 +53,14 @@ public class JwtFilter extends OncePerRequestFilter {
 
                     authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                     SecurityContextHolder.getContext().setAuthentication(authToken);
+                    roles.forEach(role -> System.out.println("→ Rol recibido: " + role));
+                    authorities.forEach(auth -> System.out.println("→ Authority creada: " + auth.getAuthority()));
+
                 }
             }
         }
 
         filterChain.doFilter(request, response);
+
     }
 }

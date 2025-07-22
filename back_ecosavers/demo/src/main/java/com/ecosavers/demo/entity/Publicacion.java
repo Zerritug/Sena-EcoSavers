@@ -44,9 +44,10 @@ public class Publicacion {
     public LocalDateTime getFecha(){return fecha;}
     public void setFecha (LocalDateTime fecha){this.fecha = fecha;}
 
-    public Usuario usuario(){return usuario;}
-    public void setUsuario(Usuario usuarios){this.usuario = usuarios;}
+    public Usuario getUsuario() { return usuario; }
+    public void setUsuario(Usuario usuario) { this.usuario = usuario; }
 
-    public Categoria categoria(){return categoria;}
-    public void setCategoria(Categoria categorias){this.categoria = categoria;}
+    public Categoria getCategoria() { return categoria; }
+    public void setCategoria(Categoria categoria) { this.categoria = categoria; }
+
 }
