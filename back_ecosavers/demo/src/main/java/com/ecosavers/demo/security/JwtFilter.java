@@ -44,7 +44,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
 
                     List<? extends GrantedAuthority> authorities = roles.stream()
-                            .map(SimpleGrantedAuthority::new) // correcto si el token ya contiene "ROLE_ADMIN"
+                            .map(SimpleGrantedAuthority::new)
                             .toList();
 
 

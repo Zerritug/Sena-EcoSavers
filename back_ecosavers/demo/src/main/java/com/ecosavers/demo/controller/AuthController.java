@@ -8,7 +8,10 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -20,10 +23,16 @@ public class AuthController {
 
     private final JwtUtil jwtUtil;
     private final UsuarioRepository usuarioRepo;
+    private final BCryptPasswordEncoder passwordEncoder;
+    private final AccountBlock accountBlock;
 
-    public AuthController(JwtUtil jwtUtil, UsuarioRepository usuarioRepo) {
+
+    public AuthController(JwtUtil jwtUtil, UsuarioRepository usuarioRepo, BCryptPasswordEncoder passwordEncoder1 , AccountBlock accountBlock1) {
         this.jwtUtil = jwtUtil;
         this.usuarioRepo = usuarioRepo;
+        this.passwordEncoder = passwordEncoder1;
+        this.accountBlock = accountBlock1;
+
     }
 
     @PostMapping("/login")
@@ -31,13 +40,18 @@ public class AuthController {
 
         Usuario usuario = usuarioRepo.findByEmail(request.getUsername());
 
-        if (usuario == null){
+        if (usuario == null || usuario.getRol() == null || !passwordEncoder.matches(request.getPassword(), usuario.getContraseña())){
+            accountBlock.incrementarIntentos(request.getUsername());
+            System.out.println("Intento fallido || " + accountBlock.getIntentos() + "  intento antes de llegar a 5");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+
+
         }
 
-        if(usuario.getRol() == null){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        if(usuario.getBloqueo() != null && usuario.getBloqueo().isAfter(LocalDateTime.now())){
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
+
 
         String roleName = "ROLE_" + usuario.getRol().getName();
         List<String> roles = List.of(roleName);

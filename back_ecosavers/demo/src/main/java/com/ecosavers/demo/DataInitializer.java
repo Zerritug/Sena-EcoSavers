@@ -14,6 +14,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class DataInitializer {
 
     @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder(); // ← aquí estás creando una instancia
+    }
+    @Bean
     public CommandLineRunner seed(RolRepository rolRepo, UsuarioRepository userRepo) {
         return args -> {
             // Verifica si ya existe el rol ADMIN

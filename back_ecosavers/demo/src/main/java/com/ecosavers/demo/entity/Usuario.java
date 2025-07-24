@@ -1,8 +1,13 @@
     package com.ecosavers.demo.entity;
 
     import jakarta.persistence.*;
+
+    import java.time.LocalDate;
+    import java.time.LocalDateTime;
     import java.util.List;
     import com.ecosavers.demo.entity.Rol;
+    import org.springframework.cglib.core.Local;
+
     @Entity
     @Table(name = "Usuario")
     public class Usuario {
@@ -15,6 +20,7 @@
         private Long TelNumber;
         private boolean Estado;
         private String Contraseña;
+        private LocalDateTime bloqueo;
 
         //relacion entre tablas
         @ManyToOne(fetch = FetchType.EAGER)
@@ -41,6 +47,8 @@
         public String getContraseña(){return Contraseña;};
         public void setContraseña(String Contraseña){this.Contraseña = Contraseña;};
 
+        public LocalDateTime getBloqueo(){return bloqueo;}
+        public void setBloqueo (LocalDateTime bloqueo){this.bloqueo = bloqueo;}
         public Rol getRol(){return rol;};
         public void setRol(Rol roles){ this.rol = roles;}
 
