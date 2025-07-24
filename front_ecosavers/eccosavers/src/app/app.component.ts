@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from '../shared/header/header.component'; // Ajusta la ruta si es necesario
+import { HistorialComponent } from './pages/historial/historial.component';
 
 @Component({
-  standalone: true,
   selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule, RouterOutlet, HistorialComponent],
   templateUrl: './app.component.html',
-  imports: [RouterOutlet],
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {}
+export class AppComponent {
+  title = 'ecosavers';
+}

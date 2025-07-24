@@ -1,0 +1,190 @@
+:host {
+  display: block;
+  background-color: var(--color-secondary);
+  font-family: "Segoe UI", sans-serif;
+  padding: 24px;
+}
+
+.panel {
+  max-width: 1100px;
+  margin: auto;
+  background: var(--color-white);
+  border: 2px solid var(--color-border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.tabs {
+  display: flex;
+  background-color: #e7f4e0;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.tab {
+  flex: 1;
+  padding: 14px;
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-bottom 0.2s;
+  border-right: 1px solid var(--color-border);
+  color: var(--color-dark);
+  text-align: center;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &.active {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-primary);
+  }
+}
+
+.content-section {
+  padding: 24px;
+}
+
+.actividades-lista {
+  margin-bottom: 30px;
+}
+
+.actividad-item {
+  background-color: var(--color-lightgreen);
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--color-accent);
+  border: 1px solid var(--color-border);
+
+  .fecha {
+    color: var(--color-dark);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .titulo {
+    color: var(--color-dark-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .detalles {
+    color: var(--color-dark);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  .dispositivos {
+    margin-top: 15px;
+    background-color: rgba(240, 240, 240, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 12px;
+
+    p {
+      font-weight: 600;
+      color: var(--color-dark-primary);
+      margin-bottom: 8px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+
+      li {
+        padding: 4px 0;
+        padding-left: 20px;
+        position: relative;
+        color: var(--color-dark);
+
+        &::before {
+          content: "•";
+          color: var(--color-accent);
+          font-weight: bold;
+          position: absolute;
+          left: 8px;
+        }
+      }
+    }
+  }
+}
+
+.certificado-section {
+  background-color: var(--color-secondary);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid var(--color-border);
+
+  h3 {
+    color: var(--color-dark-primary);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+
+  p {
+    color: var(--color-dark);
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .btn-descargar {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border: 2px solid var(--color-accent);
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(1.05);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tab {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .actividad-item {
+    padding: 15px;
+  }
+
+  .certificado-section {
+    padding: 20px;
+  }
+}
