@@ -42,7 +42,10 @@ public class AuthController {
 
         if (usuario == null || usuario.getRol() == null || !passwordEncoder.matches(request.getPassword(), usuario.getContraseña())){
             accountBlock.incrementarIntentos(request.getUsername());
-            System.out.println("Intento fallido || " + accountBlock.getIntentos() + "  intento antes de llegar a 5");
+            if (accountBlock.getIntentos()<=5){
+                System.out.println("Intento fallido || " + accountBlock.getIntentos());
+            }
+
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 
 
