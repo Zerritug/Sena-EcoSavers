@@ -32,7 +32,7 @@ public class AccountBlock {
         if (intentos >= 5) {
             Usuario usuario = usuarioRepo.findByEmail(email);
             if (usuario != null) {
-                usuario.setBloqueo(LocalDateTime.now().plusMinutes(1)); //Configuracion de minutos
+                usuario.setBloqueo(LocalDateTime.now().plusMinutes(15));
                 usuarioRepo.save(usuario);
                 System.out.println("Usuario bloqueado por intentos fallidos: " + email);
                 System.out.println("Usuario bloqueado por " +  usuario.getBloqueo());

@@ -60,7 +60,7 @@ public class AuthController {
         List<String> roles = List.of(roleName);
 
         String token = jwtUtil.generateToken(usuario.getEmail(), roles);
-        System.out.println("🔑 Token generado: " + token);
+        System.out.println("// Token generado: " + token);
 
         return ResponseEntity.ok(new TokenResponse(token));
 
