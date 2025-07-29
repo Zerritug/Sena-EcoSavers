@@ -1,4 +1,5 @@
 package com.ecosavers.demo.security;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import org.springframework.context.annotation.Bean;
@@ -8,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
+@EnableMethodSecurity(prePostEnabled = true)
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -17,6 +19,11 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/rol/**").permitAll()
+                        .requestMatchers("/api/categorias/**").hasRole("ADMIN")
+                        .requestMatchers("/api/Publicaciones/**").hasRole("ADMIN")
+                        .requestMatchers("/api/Usuarios/**").permitAll()
+                        .requestMatchers("/h2-console/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
