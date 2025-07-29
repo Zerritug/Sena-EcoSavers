@@ -1,4 +1,6 @@
 package com.ecosavers.demo.controller;
+import com.ecosavers.demo.dto.PasswordChangeRequest;
+import java.security.Principal;
 
 import com.ecosavers.demo.entity.Usuario;
 import com.ecosavers.demo.service.UsuarioService;
@@ -38,6 +40,12 @@ public class UsuarioController {
     public ResponseEntity<String> deleteUsuario(@RequestParam Long id){
         usuarioService.deleteUsuario(id);
         return ResponseEntity.ok("Usuario eliminado correctamente");
+    }
+
+    @PostMapping("/changePassword")
+    public ResponseEntity<String> changePassword(@RequestBody PasswordChangeRequest request, Principal principal) {
+        usuarioService.changePassword(principal.getName(), request);
+        return ResponseEntity.ok("Contraseña actualizada correctamente.");
     }
 
 }

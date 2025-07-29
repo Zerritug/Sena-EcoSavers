@@ -14,7 +14,7 @@
         private String email;
         private int TelNumber;
         private boolean Estado;
-        private String Contraseña;
+        private String password;
 
         //relacion entre tablas
         @ManyToOne(fetch = FetchType.EAGER)
@@ -38,8 +38,8 @@
         public Boolean getEstado(){return Estado;};
         public void setEstado(boolean Estado){ this.Estado = Estado;};
 
-        public String getContraseña(){return Contraseña;};
-        public void setContraseña(String Contraseña){this.Contraseña = Contraseña;};
+        public String getPassword(){return password;};
+        public void setPassword(String password){this.password = password;};
 
         public Rol getRol(){return rol;};
         public void setRol(Rol roles){ this.rol = roles;}
