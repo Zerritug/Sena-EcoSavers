@@ -1,0 +1,171 @@
+:host {
+  display: block;
+  background-color: var(--color-secondary);
+  font-family: "Segoe UI", sans-serif;
+  padding: 24px;
+}
+
+:root {
+  --color-primary: #2f6e4c;
+  --color-secondary: #edf9d1;
+  --color-accent: #109751;
+  --color-dark: #373737;
+  --color-white: #ffffff;
+  --color-dark-primary: #214632; /* Color para la pestaña activa de reciclaje */
+  --color-lightgreen: #affad1;
+  --color-red: #f8d7da;
+  --color-border: #2e2e2e40; /* Tu color de borde original */
+
+  /* Colores de distintivos para tipos de residuos (incluidos para consistencia) */
+  --badge-smartphone-bg: #e0cffc;
+  --badge-smartphone-text: #6a0dad;
+  --badge-computadora-bg: #cceeff;
+  --badge-computadora-text: #007bff;
+  --badge-tablet-bg: #ffe0b2;
+  --badge-tablet-text: #ff8c00;
+  --badge-bateria-bg: #fffacd;
+  --badge-bateria-text: #daa520;
+  --badge-electrodomestico-bg: #f0e68c;
+  --badge-electrodomestico-text: #8b4513;
+  --badge-impresora-bg: #fbcfe8;
+  --badge-impresora-text: #c2185b;
+  --badge-cable-bg: #d1e7dd;
+  --badge-cable-text: #008080;
+  --badge-periferico-bg: #d4edda;
+  --badge-periferico-text: #28a745;
+}
+
+.panel {
+  max-width: 1100px;
+  margin: auto;
+  background: var(--color-white);
+  border: 2px solid var(--color-border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tabs {
+  display: flex;
+  background-color: #e7f4e0;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.tab {
+  flex: 1;
+  padding: 14px;
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-bottom 0.2s;
+  border-right: 1px solid var(--color-border);
+  color: var(--color-dark);
+  text-align: center;
+}
+
+.tab:last-child {
+  border-right: none;
+}
+
+.tab.active {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-bottom: 3px solid var(--color-primary);
+}
+
+/* Estilo específico para la pestaña activa de Puntos de Reciclaje (si se usa) */
+.tab.active.recycling-active {
+  background-color: var(--color-dark-primary);
+  color: var(--color-white);
+  border-bottom: none;
+}
+
+/* Estilos específicos para Estadísticas */
+.estadisticas-resumen {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 280px;
+  background-color: var(--color-white);
+  padding: 20px;
+  border: 2px solid var(--color-border);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03); /* Sombra sutil para las tarjetas */
+}
+
+.card .titulo {
+  font-size: 14px;
+  color: var(--color-dark);
+  margin-bottom: 5px;
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-size: 26px;
+  color: var(--color-dark-primary); /* Usando un color más oscuro para los números */
+  font-weight: 700;
+}
+
+.variacion {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.variacion.positivo {
+  color: green;
+}
+
+.actividad {
+  padding: 24px;
+  margin-top: 20px;
+}
+
+.actividad h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: var(--color-dark);
+}
+
+.grafico-falso {
+  height: 200px;
+  background-color: #c5e8d7; /* Un verde claro para el placeholder */
+  border-radius: 10px;
+  text-align: center;
+  line-height: 200px;
+  color: var(--color-dark-primary);
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .estadisticas-resumen {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,282 @@
+/* Variables globales para este componente */
+:host {
+  display: block;
+  background-color: var(--color-secondary);
+  font-family: "Segoe UI", sans-serif;
+  padding: 24px; /* Padding del host para el fondo general */
+}
+
+:root {
+  --color-primary: #2f6e4c; /* Verde principal, más claro para el header */
+  --color-secondary: #edf9d1;
+  --color-accent: #109751;
+  --color-dark: #373737;
+  --color-white: #ffffff;
+  --color-dark-primary: #214632; /* Se mantiene si lo necesitas en otro lugar, pero no para el header */
+  --color-lightgreen: #affad1;
+  --color-red: #f8d7da;
+  --color-border: rgba(0, 0, 0, 0.05); /* Borde muy sutil para el panel y otros elementos */
+
+  /* Colores de distintivos para tipos de residuos (fondo y texto) */
+  --badge-smartphone-bg: #e0cffc;
+  --badge-smartphone-text: #6a0dad;
+  --badge-computadora-bg: #cceeff;
+  --badge-computadora-text: #007bff;
+  --badge-tablet-bg: #ffe0b2;
+  --badge-tablet-text: #ff8c00;
+  --badge-bateria-bg: #fffacd;
+  --badge-bateria-text: #daa520;
+  --badge-electrodomestico-bg: #f0e68c;
+  --badge-electrodomestico-text: #8b4513;
+  --badge-impresora-bg: #fbcfe8;
+  --badge-impresora-text: #c2185b;
+  --badge-cable-bg: #d1e7dd;
+  --badge-cable-text: #008080;
+  --badge-periferico-bg: #d4edda;
+  --badge-periferico-text: #28a745;
+}
+
+/* Estilos generales del panel */
+.panel {
+  max-width: 1100px;
+  margin: auto;
+  background: var(--color-white);
+  border: 2px solid var(--color-border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  background-color: var(--color-primary); /* Color del header, ahora más claro */
+  color: var(--color-white);
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tabs {
+  display: flex;
+  background-color: #e7f4e0;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.tab {
+  flex: 1;
+  padding: 14px;
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-bottom 0.2s;
+  border-right: 1px solid var(--color-border);
+  color: var(--color-dark);
+  text-align: center;
+}
+
+.tab:last-child {
+  border-right: none;
+}
+
+.tab.active {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-bottom: 3px solid var(--color-primary);
+}
+
+.content-section {
+  padding: 24px; /* Padding consistente para todas las secciones */
+}
+
+/* Estilos para el contenedor de acciones (barra de búsqueda y botones) */
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 15px 20px; /* Padding interno para el contenedor de acciones */
+  background-color: var(--color-white); /* Fondo blanco para el contenedor */
+  border: 1px solid var(--color-border); /* Borde muy sutil */
+  border-radius: 12px; /* Bordes redondeados para el contenedor */
+  margin-bottom: 20px; /* Margen inferior para separar de la tabla */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03); /* Sombra muy sutil y difusa */
+}
+
+.actions input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-white);
+  cursor: pointer;
+  font-weight: 600;
+  transition: filter 0.2s;
+}
+
+.btn.buscar {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.btn.limpiar {
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  border-color: var(--color-border);
+}
+
+.btn.nuevo {
+  margin-left: auto;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border-color: var(--color-accent);
+}
+
+.btn:hover {
+  filter: brightness(1.05);
+}
+
+/* Estilos para la tabla de reciclaje */
+.tabla-reciclaje {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-reciclaje thead {
+  background-color: var(--color-secondary);
+}
+
+.tabla-reciclaje th,
+.tabla-reciclaje td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1.5px solid var(--color-border);
+}
+
+/* Estilo específico para las celdas que contienen badges */
+.badges-cell {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px; /* Espacio entre los badges */
+  align-items: center;
+  /* Estilos para el contenedor de badges */
+  background-color: rgba(240, 240, 240, 0.5); /* Fondo muy claro para el contenedor */
+  border: 1px solid rgba(0, 0, 0, 0.08); /* Borde muy sutil */
+  border-radius: 8px; /* Bordes redondeados para el contenedor */
+  padding: 6px 8px; /* Padding interno para el contenedor */
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02); /* Sombra interna sutil */
+}
+
+/* Estilo base para todos los badges */
+.badge {
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 12px;
+  border: 1.5px solid; /* El color del borde se definirá por cada tipo de badge */
+  display: inline-block;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
+/* Estilos de distintivos para la sección de Puntos de Reciclaje (Estado) */
+.badge.activo {
+  background-color: #d4fadd;
+  color: #1b5e20;
+  border-color: #1b5e20;
+}
+
+.badge.inactivo {
+  background-color: var(--color-red);
+  color: #a91d1d;
+  border-color: #a91d1d;
+}
+
+/* Estilos de distintivos para tipos de reciclaje */
+.badge.smartphone {
+  background-color: var(--badge-smartphone-bg);
+  color: var(--badge-smartphone-text);
+  border-color: var(--badge-smartphone-text);
+}
+.badge.computadora {
+  background-color: var(--badge-computadora-bg);
+  color: var(--badge-computadora-text);
+  border-color: var(--badge-computadora-text);
+}
+.badge.tablet {
+  background-color: var(--badge-tablet-bg);
+  color: var(--badge-tablet-text);
+  border-color: var(--badge-tablet-text);
+}
+.badge.bateria {
+  background-color: var(--badge-bateria-bg);
+  color: var(--badge-bateria-text);
+  border-color: var(--badge-bateria-text);
+}
+.badge.electrodomestico {
+  background-color: var(--badge-electrodomestico-bg);
+  color: var(--badge-electrodomestico-text);
+  border-color: var(--badge-electrodomestico-text);
+}
+.badge.impresora {
+  background-color: var(--badge-impresora-bg);
+  color: var(--badge-impresora-text);
+  border-color: var(--badge-impresora-text);
+}
+.badge.cable {
+  background-color: var(--badge-cable-bg);
+  color: var(--badge-cable-text);
+  border-color: var(--badge-cable-text);
+}
+.badge.periferico {
+  background-color: var(--badge-periferico-bg);
+  color: var(--badge-periferico-text);
+  border-color: var(--badge-periferico-text);
+}
+
+.menu {
+  font-size: 20px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .tabs {
+    flex-direction: column;
+  }
+  .tab {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .tab:last-child {
+    border-bottom: none;
+  }
+  .actions {
+    flex-wrap: wrap;
+  }
+  .actions input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .btn.nuevo {
+    margin-left: 0;
+    width: 100%;
+  }
+  .estadisticas-resumen {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
