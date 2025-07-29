@@ -8,8 +8,11 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
-import org.springframework.web.filter.OncePerRequestFilter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
+import org.springframework.web.filter.OncePerRequestFilter;
+import java.util.List;
 import java.io.IOException;
 
 @Component
@@ -36,14 +39,28 @@ public class JwtFilter extends OncePerRequestFilter {
 
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                 if (jwtUtil.validateToken(token, username)) {
+
+                    List<String> roles = jwtUtil.extractAllClaims(token).get("roles", List.class);
+
+
+                    List<? extends GrantedAuthority> authorities = roles.stream()
+                            .map(SimpleGrantedAuthority::new)
+                            .toList();
+
+
                     UsernamePasswordAuthenticationToken authToken =
-                            new UsernamePasswordAuthenticationToken(username, null, null);
+                            new UsernamePasswordAuthenticationToken(username, null, authorities);
+
                     authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                     SecurityContextHolder.getContext().setAuthentication(authToken);
+                    roles.forEach(role -> System.out.println("→ Rol recibido: " + role));
+                    authorities.forEach(auth -> System.out.println("→ Authority creada: " + auth.getAuthority()));
+
                 }
             }
         }
 
         filterChain.doFilter(request, response);
+
     }
 }
