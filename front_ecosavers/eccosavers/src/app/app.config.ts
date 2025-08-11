@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http'; // Asegúrate de esta i
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
+import { HistorialComponent } from './pages/historial/historial.component';
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
