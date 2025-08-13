@@ -22,7 +22,6 @@
         private String Contraseña;
         private LocalDateTime bloqueo;
 
-
         //relacion entre tablas
         @ManyToOne(fetch = FetchType.EAGER)
         @JoinColumn(name = "rol_id", nullable = false)
@@ -45,8 +44,8 @@
         public Boolean getEstado(){return Estado;};
         public void setEstado(boolean Estado){ this.Estado = Estado;};
 
-        public String getPassword(){return Contraseña;};
-        public void setPassword(String Contraseña){this.Contraseña = Contraseña;};
+        public String getContraseña(){return Contraseña;};
+        public void setContraseña(String Contraseña){this.Contraseña = Contraseña;};
 
         public LocalDateTime getBloqueo(){return bloqueo;}
         public void setBloqueo (LocalDateTime bloqueo){this.bloqueo = bloqueo;}
