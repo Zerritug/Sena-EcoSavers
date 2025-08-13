@@ -14,7 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class DataInitializer {
 
     @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
+    public BCryptPasswordEncoder passEncoder() {
         return new BCryptPasswordEncoder(); // ← aquí estás creando una instancia
     }
     @Bean
@@ -30,7 +30,7 @@ public class DataInitializer {
                 user.setEmail("runny@example.com");
                 user.setTelNumber(1233232L);
                 user.setEstado(true);
-                user.setContraseña(new BCryptPasswordEncoder().encode("12345"));
+                user.setPassword(new BCryptPasswordEncoder().encode("12345"));
                 user.setRol(adminRol);
 
                 userRepo.save(user);

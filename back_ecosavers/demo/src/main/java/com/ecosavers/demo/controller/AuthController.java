@@ -40,7 +40,7 @@ public class AuthController {
 
         Usuario usuario = usuarioRepo.findByEmail(request.getUsername());
 
-        if (usuario == null || usuario.getRol() == null || !passwordEncoder.matches(request.getPassword(), usuario.getContraseña())){
+        if (usuario == null || usuario.getRol() == null || !passwordEncoder.matches(request.getPassword(), usuario.getPassword())){
             accountBlock.incrementarIntentos(request.getUsername());
             if (accountBlock.getIntentos()<=5){
                 System.out.println("Intento fallido || " + accountBlock.getIntentos());

@@ -22,7 +22,7 @@ public class JwtUtil {
     @PostConstruct
     public void init() {
         secretKey = Keys.hmacShaKeyFor(jwtSecret.getBytes(StandardCharsets.UTF_8));
-        System.out.println("🔐 Clave activa: " + jwtSecret);
+        System.out.println("Clave activa: " + jwtSecret);
     }
 
     public String generateToken(String username, List<String> roles) {
