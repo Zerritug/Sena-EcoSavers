@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="01698235-18b9-4733-ba3b-0132ea55b884" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Sena-EcoSavers.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_ecosavers/demo/src/main/java/com/ecosavers/demo/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/back_ecosavers/demo/src/main/java/com/ecosavers/demo/controller/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_ecosavers/demo/src/main/java/com/ecosavers/demo/dto/PasswordChangeRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_ecosavers/demo/src/main/java/com/ecosavers/demo/entity/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/back_ecosavers/demo/src/main/java/com/ecosavers/demo/entity/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_ecosavers/demo/src/main/java/com/ecosavers/demo/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/back_ecosavers/demo/src/main/java/com/ecosavers/demo/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_ecosavers/demo/src/main/java/com/ecosavers/demo/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/back_ecosavers/demo/src/main/java/com/ecosavers/demo/service/UsuarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/public/img/fondo-login-page-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/public/img/fondo-login-page-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/public/img/fondo-login-page.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/public/img/mascota.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/app.routes.server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/app.routes.server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/interfaces/actividad.interface.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/pages/estadisticas/estadisticas.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/pages/estadisticas/estadisticas.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/pages/estadisticas/estadisticas.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/pages/estadisticas/estadisticas.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/pages/historial-campanas/historial-campanas.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/pages/historial-campanas/historial-campanas.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/pages/historial-campanas/historial-campanas.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/pages/historial/historial.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/pages/historial/historial.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/pages/historial/historial.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/pages/puntos-reciclaje/puntos-reciclaje.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/pages/puntos-reciclaje/puntos-reciclaje.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/pages/puntos-reciclaje/puntos-reciclaje.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/pages/puntos-reciclaje/puntos-reciclaje.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/pages/usuarios/usuarios.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/pages/usuarios/usuarios.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/pages/usuarios/usuarios.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/pages/usuarios/usuarios.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/app/services/historial.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/pages/login-page/login-footer/login-footer.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/pages/login-page/login-footer/login-footer.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/pages/login-page/login-footer/login-footer.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/pages/login-page/login-footer/login-footer.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/pages/login-page/login-form/login-form.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/pages/login-page/login-form/login-form.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/pages/login-page/login-form/login-form.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/pages/login-page/login-form/login-form.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/pages/login-page/login-page.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/pages/login-page/login-page.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/pages/login-page/login-page.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/pages/login-page/login-page.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/pages/profile/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/pages/profile/profile.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/pages/profile/profile.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/pages/profile/profile.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/shared/models/login-credentials.model.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_ecosavers/eccosavers/src/shared/services/auth.service.ts" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="sistema-roles" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="30Ii9Vhqj4SBwJ2NMtLOLojFCzy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.DemoApplication.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/EcoSavers/Sena-EcoSavers"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="01698235-18b9-4733-ba3b-0132ea55b884" name="Changes" comment="" />
+      <created>1753321337360</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1753321337360</updated>
+    </task>
+    <servers />
+  </component>
+</project>

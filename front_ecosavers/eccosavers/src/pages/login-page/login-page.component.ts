@@ -8,27 +8,23 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
-  standalone: true,                             // ← marca como standalone
-  imports: [
-    CommonModule,                                // ← para *ngIf
-    LoginFormComponent,                          // ← tu form
-    LoginFooterComponent                         // ← tu footer
-  ],
+  standalone: true,
+  imports: [CommonModule, LoginFormComponent, LoginFooterComponent],
   templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.scss']
+  styleUrls: ['./login-page.component.scss'],
 })
 export class LoginPageComponent {
   errorMessage = '';
 
-  constructor(
-    private auth: AuthService,
-    private router: Router
-  ) {}
+  constructor(private auth: AuthService, private router: Router) {}
 
   onLogin(creds: LoginCredentials) {
     this.auth.login(creds).subscribe({
-      next: () => this.router.navigate(['/home']),
-      error: () => this.errorMessage = 'Usuario o contraseña inválidos'
+      next: (response) => {
+        localStorage.setItem('token', response.token); //TOken jwt guardado
+        this.router.navigate(['/usuarios']);
+      },
+      error: () => (this.errorMessage = 'Usuario o contraseña inválidos'),
     });
   }
 }

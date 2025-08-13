@@ -19,7 +19,7 @@
         private String email;
         private Long TelNumber;
         private boolean Estado;
-        private String Contrasena;
+        private String Contraseña;
         private LocalDateTime bloqueo;
 
 
@@ -45,8 +45,8 @@
         public Boolean getEstado(){return Estado;};
         public void setEstado(boolean Estado){ this.Estado = Estado;};
 
-        public String getPassword(){return Contrasena;};
-        public void setPassword(String Contrasena){this.Contrasena = Contrasena;};
+        public String getPassword(){return Contraseña;};
+        public void setPassword(String Contraseña){this.Contraseña = Contraseña;};
 
         public LocalDateTime getBloqueo(){return bloqueo;}
         public void setBloqueo (LocalDateTime bloqueo){this.bloqueo = bloqueo;}

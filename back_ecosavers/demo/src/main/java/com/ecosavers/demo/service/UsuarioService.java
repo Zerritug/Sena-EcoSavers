@@ -52,7 +52,6 @@ public class UsuarioService {
         return usuario;
     }
 
-
     public void changePassword(String email, PasswordChangeRequest request) {
         Usuario usuario = usuarioRepo.findByEmail(email);
 
