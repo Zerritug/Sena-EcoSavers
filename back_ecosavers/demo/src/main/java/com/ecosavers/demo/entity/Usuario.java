@@ -1,7 +1,7 @@
     package com.ecosavers.demo.entity;
 
     import jakarta.persistence.*;
-
+    import jakarta.validation.constraints.*;
     import java.time.LocalDate;
     import java.time.LocalDateTime;
     import java.util.List;
@@ -52,5 +52,12 @@
         public Rol getRol(){return rol;};
         public void setRol(Rol roles){ this.rol = roles;}
 
+        @Column(name = "email", nullable = false, unique = true)
+        @Email(message = "Invalid email format")
+        @NotBlank(message = "Email is required")
+        private String email;
 
+        @Column(name = "password", nullable = false)
+        @NotBlank(message = "Password is required")
+        private String password;
     }

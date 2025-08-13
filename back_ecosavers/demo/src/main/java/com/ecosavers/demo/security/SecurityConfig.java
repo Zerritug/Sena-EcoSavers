@@ -31,3 +31,12 @@ public class SecurityConfig {
         return http.build();
     }}
 
+<<<<<<< HEAD
+=======
+   //bean para codificar contraseñas
+   @Bean
+   public PasswordEncoder passwordEncoder() {
+       return new BCryptPasswordEncoder();
+   }
+}
+>>>>>>> 932603b65d3997028d28dbf06ed166e1092ac63d
